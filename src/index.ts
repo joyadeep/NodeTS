@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 // import router from './routes/route'
 import router from './routes/index'
 const app= express();
+const PORT=process.env.PORT || 5001
 
 dotenv.config();
 app.use(cors());
@@ -16,7 +17,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.listen(process.env.PORT,()=>{
+app.listen(PORT,()=>{
     console.log(`server connected at port ${process.env.PORT}`)
 })
 
