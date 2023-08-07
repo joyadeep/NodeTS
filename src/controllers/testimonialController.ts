@@ -21,13 +21,14 @@ export const getTestimonials=async(req:Request,res:Response)=>{
 //  POST : create new testimonial
 export const addTestimonial=async(req:Request,res:Response)=>{
     try {
-        const {name,email,image,message}=req.body;
+        const {name,email,image,message,designation}=req.body;
         const result=await prisma.testimonial.create({
             data:{
                 name:name,
                 email:email,
                 image:image,
-                message:message
+                message:message,
+                designation:designation
             }
         })
         if (!result)
